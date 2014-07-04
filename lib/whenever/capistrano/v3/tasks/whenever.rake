@@ -37,7 +37,7 @@ namespace :load do
     set :whenever_identifier,   ->{ fetch :application }
     set :whenever_environment,  ->{ fetch :rails_env, "production" }
     set :whenever_variables,    ->{ "environment=#{fetch :whenever_environment}" }
-    set :whenever_update_flags, ->{ "--update-crontab #{fetch :whenever_identifier} --set #{fetch :whenever_variables}" }
+    set :whenever_update_flags, ->{ "--update-crontab #{fetch :whenever_identifier} --set #{fetch :whenever_variables} -f config/schedule.rb,config/schedules/#{fetch :rails_env}.rb" }
     set :whenever_clear_flags,  ->{ "--clear-crontab #{fetch :whenever_identifier}" }
   end
 end
