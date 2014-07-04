@@ -23,8 +23,8 @@ OptionParser.new do |opts|
   opts.on('-s', '--set [variables]', 'Example: --set \'environment=staging&path=/my/sweet/path\'') do |set|
     options[:set] = set if set
   end
-  opts.on('-f', '--load-file [schedule file]', 'Default: config/schedule.rb') do |file|
-    options[:file] = file if file
+  opts.on('-f', '--load-file [schedule file]', 'Default: config/schedule.rb') do |files|
+    options[:files] = files.split(',') if files
   end
   opts.on('-u', '--user [user]', 'Default: current user') do |user|
     options[:user] = user if user

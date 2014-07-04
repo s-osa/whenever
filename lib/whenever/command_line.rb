@@ -9,7 +9,7 @@ module Whenever
     def initialize(options={})
       @options = options
 
-      @options[:file]       ||= 'config/schedule.rb'
+      @options[:files]      ||= ['config/schedule.rb']
       @options[:cut]        ||= 0
       @options[:identifier] ||= default_identifier
 
